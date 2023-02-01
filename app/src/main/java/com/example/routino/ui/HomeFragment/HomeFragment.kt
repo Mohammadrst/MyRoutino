@@ -2,21 +2,15 @@ package com.example.routino.ui.HomeFragment
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.routino.data.db.AppDAO
-import com.example.routino.data.db.AppDatabase
-import com.example.routino.data.repository.home.homeRepository
-import com.example.routino.data.repository.home.homeRepositoryImpl
-import com.example.routino.data.viewmodel.homeViewModel
+import com.example.routino.data.viewmodel.HomeViewModel
 import com.example.routino.databinding.FragmentHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.collections.ArrayList
@@ -25,14 +19,15 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private val TAG = "Response"
-    var adapter = CalanderRecyclerViewAdapter()
-    private val homeViewModel by viewModel<homeViewModel>()
-    var currentDay = 0
+
+    private var currentDay = 0
     var previousWeek = ArrayList<Int>()
     var currentWeek = ArrayList<Int>()
     var weekTitles = ArrayList<String>()
 
+    var adapter = CalanderRecyclerViewAdapter()
+
+    private val homeViewModel :HomeViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)

@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.example.routino.data.db.AppDatabase
 import com.example.routino.data.repository.home.homeRepository
 import com.example.routino.data.repository.home.homeRepositoryImpl
-import com.example.routino.data.viewmodel.homeViewModel
+import com.example.routino.data.viewmodel.HomeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.GlobalContext.startKoin
@@ -35,6 +35,6 @@ class App : Application() {
             database.AppDAO()
         }
         factory<homeRepository> { homeRepositoryImpl(get()) }
-        viewModel { homeViewModel(get()) }
+        viewModel { HomeViewModel(get()) }
     }
 }

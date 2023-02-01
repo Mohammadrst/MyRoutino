@@ -1,10 +1,11 @@
 package com.example.routino.data.repository.home
 
 import com.example.routino.data.model.Routin
+import com.example.routino.data.model.TimeWeek
 
 interface homeRepository {
 
-    fun getCurrrentWeekDays(): ArrayList<Int>
+    fun getCurrrentWeekDays(): ArrayList<TimeWeek>
 
     fun getFirstDayOfWeek(): Array<Int?>
 
