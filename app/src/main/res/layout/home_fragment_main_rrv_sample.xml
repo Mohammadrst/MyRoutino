@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="7dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/homeFragment_main_rv_progress"
+                android:layout_centerVertical="true"
+                android:progress="0"
+                android:layout_alignParentEnd="true"
+                android:layout_width="25sp"
+                android:layout_height="25sp">
+            </ProgressBar>
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/homeFragment_main_rv_tv"
+                android:textColor="@color/Blue"
+                android:fontFamily="@font/koodak"
+                android:textSize="17sp"
+                android:text="ورزش"
+                android:layout_margin="7dp"
+                android:layout_toLeftOf="@id/homeFragment_main_rv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:orientation="horizontal"
+                android:padding="7dp"
+                android:id="@+id/homeFragment_main_rv_rv"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/homeFragment_main_rv_tv"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

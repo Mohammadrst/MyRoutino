@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#E4E2E2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeFragment.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/homeFragment_Toolbar"
+        android:background="@color/Blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:contentInsetStart="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_weight="1"
+                android:id="@+id/homeFragmentMoreIV"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                android:layout_width="0dp"
+                android:layout_height="30sp">
+            </ImageView>
+
+            <ImageView
+                android:layout_weight="1"
+                android:id="@+id/homeFragmentAddIV"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_add_circle_outline_24"
+                android:layout_width="0dp"
+                android:layout_height="30sp">
+            </ImageView>
+
+            <TextView
+                android:layout_weight="4"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/Routino"
+                android:id="@+id/homeFragmentTitleTV"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/homeFragmentRoutinoIV"
+                android:src="@drawable/ic_baseline_all_inclusive_24"
+                android:layout_width="0dp"
+                android:layout_height="30sp">
+            </ImageView>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/homeFragment_weekLayer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeFragment_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/koodak"
+            android:id="@+id/homeFragment_WeekBtn"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"
+            android:text="@string/last_week"
+            android:layout_margin="20dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/button_border"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp">
+        </androidx.appcompat.widget.AppCompatButton>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeFragment_weekRecyclerView"
+            android:orientation="horizontal"
+            android:padding="7dp"
+            android:layout_toLeftOf="@id/homeFragment_WeekBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeFragment_weekLayer">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

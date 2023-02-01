@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Routino</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notes">Notes</string>
+    <string name="home">Home</string>
+    <string name="plans">Plans</string>
+    <string name="Routino">روتینو</string>
+    <string name="last_week">هفته قبل</string>
+    <string name="next_week">هفته بعد</string>
+    <string name="friday">ج</string>
+    <string name="thursday">پ</string>
+    <string name="wednesday">چ</string>
+    <string name="thusday">س</string>
+    <string name="monday">د</string>
+    <string name="sunday">ی</string>
+    <string name="saturday">ش</string>
+</resources>
