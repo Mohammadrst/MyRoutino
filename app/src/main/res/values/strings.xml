@@ -15,4 +15,11 @@
     <string name="monday">د</string>
     <string name="sunday">ی</string>
     <string name="saturday">ش</string>
+    <string name="addNewRoutin">افزودن روتین جدید</string>
+    <string name="save">ذخیره</string>
+    <string name="Name">نام</string>
+    <string name="TimesInWeek">تعداد روز در هفته</string>
+    <string name="ChangeLAnguage">تغییر زمان</string>
+    <string name="Remember">یادآور</string>
+    <string name="Color">رنگ</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.routino.ui.HomeFragment
+package com.example.routino.ui.HomeFragment.Adpaters
 
 import android.annotation.SuppressLint
 import android.graphics.Color

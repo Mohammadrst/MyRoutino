@@ -1,21 +1,20 @@
-package com.example.routino.ui.HomeFragment
+package com.example.routino.ui.HomeFragment.Adpaters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.routino.databinding.HomeFragmentMainRrvSampleBinding
-import com.example.routino.databinding.HomeFragmentSubRvSampleBinding
 
-class SubRecyclerViewItemAdapter : RecyclerView.Adapter<SubRecyclerViewItemAdapter.MyViewHolder>(){
+class MainRecyclerViewItemAdapter : RecyclerView.Adapter<MainRecyclerViewItemAdapter.MyViewHolder>(){
 
-    inner class MyViewHolder(var binding : HomeFragmentSubRvSampleBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class MyViewHolder(var binding : HomeFragmentMainRrvSampleBinding ) : RecyclerView.ViewHolder(binding.root){
         fun bind(){
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(HomeFragmentSubRvSampleBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return MyViewHolder(HomeFragmentMainRrvSampleBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
