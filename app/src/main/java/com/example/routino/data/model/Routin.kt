@@ -1,5 +1,7 @@
 package com.example.routino.data.model
 
+import android.annotation.SuppressLint
+import androidx.annotation.Nullable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
