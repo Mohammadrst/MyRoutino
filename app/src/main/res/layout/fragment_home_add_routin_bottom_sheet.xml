@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.HomeFragment.HomeAddRoutinBottomSheetFragment">
+
+    <RelativeLayout
+        android:id="@+id/homeBottomSheetHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#E4E2E2">
+
+        <TextView
+            android:id="@+id/homeBottomsheetTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/koodak"
+            android:text="@string/addNewRoutin"
+            android:textColor="@color/black"
+            android:textSize="17sp"></TextView>
+
+        <TextView
+            android:id="@+id/homeFragmentSaveTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/koodak"
+            android:text="@string/save"
+            android:textColor="@color/Blue"
+            android:textSize="17sp"></TextView>
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bottomshetTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_below="@id/homeBottomSheetHeaderLayout"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/homeBottomSheetTitleEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/bottomsheet_button_border"
+            android:fontFamily="@font/koodak"
+            android:hint="@string/Name"
+            android:textAlignment="textEnd" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bottomshetTimesInWeekLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_below="@id/bottomshetTitleLayout"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/homeBottomSheetAutoCompleteTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottomsheet_button_border"
+            android:fontFamily="@font/koodak"
+            android:hint="@string/TimesInWeek"
+            android:inputType="none"
+            android:padding="10dp"
+            android:textSize="15dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:id="@+id/homeBottomSheetRemmemberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/bottomshetTimesInWeekLayout"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bottomsheet_btn"
+            android:fontFamily="@font/koodak"
+            android:text="@string/ChangeLAnguage"
+            android:textColor="@color/white"
+            android:textSize="15dp"></androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/homeBottomSheetTimeTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/koodak"
+            android:gravity="center"
+            android:text="16:06"
+            android:textSize="15dp"></TextView>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:id="@+id/homeBottomSheetRememberCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"></CheckBox>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/homeBottomSheetRememberCheckBox"
+                android:fontFamily="@font/koodak"
+                android:text="@string/Remember"></TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeBottomSheetDaysLayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/homeBottomSheetRemmemberLayout"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/friday">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thursday">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wednesday">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thusday"></com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monday"></com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sunday"></com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saturday"></com.google.android.material.chip.Chip>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/homeBottomSheetColorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeBottomSheetDaysLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30sp"
+        android:fontFamily="@font/koodak"
+        android:text="@string/Color"
+        android:textSize="17dp"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeBottomSheetColorRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeBottomSheetColorTv"
+        android:padding="10dp"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
