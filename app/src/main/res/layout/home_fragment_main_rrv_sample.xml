@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:padding="7dp"
+<RelativeLayout
+    android:layout_marginTop="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,37 +15,123 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ProgressBar
-                android:id="@+id/homeFragment_main_rv_progress"
-                android:layout_centerVertical="true"
-                android:progress="0"
+            <RelativeLayout
                 android:layout_alignParentEnd="true"
-                android:layout_width="25sp"
-                android:layout_height="25sp">
-            </ProgressBar>
-
-            <TextView
-                android:layout_centerVertical="true"
-                android:id="@+id/homeFragment_main_rv_tv"
-                android:textColor="@color/Blue"
-                android:fontFamily="@font/koodak"
-                android:textSize="17sp"
-                android:text="ورزش"
-                android:layout_margin="7dp"
-                android:layout_toLeftOf="@id/homeFragment_main_rv_progress"
-                android:layout_width="wrap_content"
+                android:id="@+id/containerLayout"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content">
-            </TextView>
+                <ProgressBar
+                    android:progressDrawable="@drawable/circular"
+                    android:indeterminate="false"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:id="@+id/homeFragment_main_rv_progress"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="40sp"
+                    android:layout_height="40sp">
+                </ProgressBar>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:orientation="horizontal"
-                android:padding="7dp"
-                android:id="@+id/homeFragment_main_rv_rv"
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/homeFragment_main_rv_tv"
+                    android:textColor="@color/Blue"
+                    android:fontFamily="@font/koodak"
+                    android:textSize="17sp"
+                    android:text="ورزش"
+                    android:layout_margin="7dp"
+                    android:layout_toLeftOf="@id/homeFragment_main_rv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginEnd="10dp"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@id/homeFragment_main_rv_tv"
+                android:layout_toLeftOf="@id/containerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="30dp">
-            </androidx.recyclerview.widget.RecyclerView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_friday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_thursday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_wensday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_thusday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_monday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_sunday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+                <ImageView
+                    android:tag="close"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/iv_homeRv_satherday"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                </ImageView>
+
+
+
+            </LinearLayout>
 
         </RelativeLayout>
 
