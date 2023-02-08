@@ -1,15 +1,20 @@
 package com.example.routino.ui.HomeFragment.Adpaters
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.routino.R
 import com.example.routino.data.model.Routin
 import com.example.routino.databinding.HomeFragmentMainRrvSampleBinding
 
-class MainRecyclerViewItemAdapter(var ondaysChanged: OndaysChanged,var ctx :Context) :
+class MainRecyclerViewItemAdapter(var ondaysChanged: OndaysChanged, var ctx: Context) :
     RecyclerView.Adapter<MainRecyclerViewItemAdapter.MyViewHolder>() {
 
     var list = ArrayList<Routin>()
@@ -30,13 +35,13 @@ class MainRecyclerViewItemAdapter(var ondaysChanged: OndaysChanged,var ctx :Cont
             if (routin.doneDaysList.isNullOrEmpty()) {
                 currentProgress = 0
             } else {
-                currentProgress = routin.doneDaysList?.size!!
+                currentProgress = routin.doneDaysList.size
             }
             daysHandler(binding, routin)
 
-            binding.homeFragmentMainRvProgress.max = maxProgress
-            binding.homeFragmentMainRvProgress.progress = currentProgress
-
+            binding.homeFragmentMainRvProgress.progressMax = maxProgress.toFloat()
+            binding.homeFragmentMainRvProgress.setProgressWithAnimation(currentProgress.toFloat(),1000)
+            binding.homeFragmentMainRvProgress.progressBarColor = Color.GRAY
         }
     }
 
@@ -79,7 +84,9 @@ class MainRecyclerViewItemAdapter(var ondaysChanged: OndaysChanged,var ctx :Cont
                 iv.tag = "check"
                 iv.setImageResource(R.drawable.ic_baseline_check_24_dark)
                 ondaysChanged.OnDayAdd(routin, day)
-            } else if (iv.tag == "check"){
+
+
+            } else if (iv.tag == "check") {
                 iv.tag = "close"
                 iv.setImageResource(R.drawable.ic_baseline_close_24_dark)
                 ondaysChanged.OnDayRemove(routin, day)

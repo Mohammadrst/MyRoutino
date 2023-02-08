@@ -55,8 +55,8 @@ class HomeFragment : Fragment(),HomeAddRoutinBottomSheetFragment.OnSaveBtnClicke
 
         homeViewModel.getAllRoutins().observe(viewLifecycleOwner, Observer {
             SetupMainRecyclerview(it)
-            if (it.size > 0){
-                Log.i(TAG, "onViewCreated: " + it[0].doneDaysList?.size)
+            if (it.isNotEmpty()){
+                Log.i(TAG, "onViewCreated: " + it[0].doneDaysList.size)
             }
         })
 
@@ -142,8 +142,7 @@ class HomeFragment : Fragment(),HomeAddRoutinBottomSheetFragment.OnSaveBtnClicke
         list.add(day.toString())
         routin.doneDaysList = list*/
         routin.doneDaysList.add("1")
-        homeViewModel.updateRoutineTitle(routin)
-        //homeViewModel.updateRoutineTitle(routin)
+//        homeViewModel.updateRoutineTitle(routin)
     }
 
     override fun OnDayRemove(routin: Routin, day: Int) {

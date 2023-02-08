@@ -1,134 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_marginTop="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginTop="10dp">
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="7dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="7dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <RelativeLayout
-                android:layout_alignParentEnd="true"
                 android:id="@+id/containerLayout"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content">
-                <ProgressBar
-                    android:progressDrawable="@drawable/circular"
-                    android:indeterminate="false"
-                    style="?android:attr/progressBarStyleHorizontal"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/homeFragment_main_rv_progress"
-                    android:layout_centerVertical="true"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_width="40sp"
-                    android:layout_height="40sp">
-                </ProgressBar>
+                    android:layout_centerVertical="true"
+                    app:cpb_background_progressbar_color="#b6bbd8"
+                    app:cpb_background_progressbar_width="4dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="#3f51b5"
+                    app:cpb_progressbar_width="2dp"
+                    app:cpb_round_border="false" />
 
                 <TextView
-                    android:layout_centerVertical="true"
                     android:id="@+id/homeFragment_main_rv_tv"
-                    android:textColor="@color/Blue"
-                    android:fontFamily="@font/koodak"
-                    android:textSize="17sp"
-                    android:text="ورزش"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_margin="7dp"
                     android:layout_toLeftOf="@id/homeFragment_main_rv_progress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:fontFamily="@font/koodak"
+                    android:text="ورزش"
+                    android:textColor="@color/Blue"
+                    android:textSize="17sp" />
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_marginEnd="10dp"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@id/containerLayout"
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toLeftOf="@id/containerLayout">
 
                 <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
                     android:id="@+id/iv_homeRv_friday"
-                    android:src="@drawable/ic_baseline_close_24_dark"
                     android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
-
-                <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:tag="close" />
+
+                <ImageView
                     android:id="@+id/iv_homeRv_thursday"
-                    android:src="@drawable/ic_baseline_close_24_dark"
                     android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
-
-                <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:tag="close" />
+
+                <ImageView
                     android:id="@+id/iv_homeRv_wensday"
-                    android:src="@drawable/ic_baseline_close_24_dark"
                     android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
-
-                <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:tag="close"></ImageView>
+
+                <ImageView
                     android:id="@+id/iv_homeRv_thusday"
-                    android:src="@drawable/ic_baseline_close_24_dark"
                     android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
-
-                <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:tag="close"></ImageView>
+
+                <ImageView
                     android:id="@+id/iv_homeRv_monday"
-                    android:src="@drawable/ic_baseline_close_24_dark"
                     android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
-
-                <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:tag="close"></ImageView>
+
+                <ImageView
                     android:id="@+id/iv_homeRv_sunday"
-                    android:src="@drawable/ic_baseline_close_24_dark"
                     android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
-
-                <ImageView
-                    android:tag="close"
-                    android:padding="7dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="0.5"
-                    android:id="@+id/iv_homeRv_satherday"
+                    android:padding="7dp"
                     android:src="@drawable/ic_baseline_close_24_dark"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp">
-                </ImageView>
+                    android:tag="close"></ImageView>
 
+                <ImageView
+                    android:id="@+id/iv_homeRv_satherday"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_baseline_close_24_dark"
+                    android:tag="close"></ImageView>
 
 
             </LinearLayout>

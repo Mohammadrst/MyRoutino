@@ -60,12 +60,14 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:id="@+id/bottomshetTimesInWeekLayout"
         android:layout_width="match_parent"
         android:layout_height="80sp"
         android:layout_below="@id/bottomshetTitleLayout"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:clickable="false"
         android:background="@color/white"
         android:padding="10dp">
 
@@ -73,7 +75,6 @@
             android:id="@+id/homeBottomSheetAutoCompleteTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bottomsheet_button_border"
             android:fontFamily="@font/koodak"
             android:hint="@string/TimesInWeek"
             android:inputType="none"

@@ -9,7 +9,6 @@ import com.example.routino.data.repository.home.homeRepository
 import com.example.routino.data.repository.home.homeRepositoryImpl
 
 class HomeViewModel(private var homeRepository: homeRepository) : ViewModel() {
-
     fun getCurrrentWeekDays(): ArrayList<Int> {
         return homeRepository.getCurrrentWeekDays()
     }
