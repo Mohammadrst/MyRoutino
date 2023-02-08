@@ -1,7 +1,8 @@
-package com.example.routino.data.viewmodel
+package com.example.routino.ui.HomeFragment
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.routino.data.model.Routin
 import com.example.routino.data.repository.home.homeRepository
@@ -34,8 +35,12 @@ class HomeViewModel(private var homeRepository: homeRepository) : ViewModel() {
         homeRepository.InsertRoutin(routin)
     }
 
-    fun getAllRoutins(): List<Routin> {
+    fun getAllRoutins(): LiveData<List<Routin>> {
         return homeRepository.getAllRoutins()
+    }
+
+    fun updateRoutineTitle(routin: Routin){
+         homeRepository.updateRoutineTitle(routin)
     }
 
 

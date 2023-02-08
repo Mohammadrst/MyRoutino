@@ -2,6 +2,8 @@ package com.example.routino.data.repository.home
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.routino.data.db.AppDAO
 import com.example.routino.data.model.Routin
 import saman.zamani.persiandate.PersianDate
@@ -14,8 +16,8 @@ import kotlin.collections.ArrayList
 
 class homeRepositoryImpl(val dao: AppDAO) : homeRepository{
 
-    override fun getCurrrentWeekDays(): ArrayList<Int> {
 
+    override fun getCurrrentWeekDays(): ArrayList<Int> {
         val format: DateFormat = SimpleDateFormat("yyyy/MM/dd")
         val calendar = Calendar.getInstance()
         calendar.firstDayOfWeek = Calendar.SATURDAY
@@ -104,7 +106,34 @@ class homeRepositoryImpl(val dao: AppDAO) : homeRepository{
         dao.InsertRoutin(routin)
     }
 
-    override fun getAllRoutins(): List<Routin> {
-        return dao.getAllRoutins()!!
+    override fun getAllRoutins(): LiveData<List<Routin>> {
+
+        return dao.getAllRoutins()
+
     }
+
+    override fun updateRoutineTitle(routin: Routin) {
+        dao.updateRoutine(routin)
+    }
+
+    override fun updateRoutineDoneDays(routin: Routin, arrayList: ArrayList<String>) {
+
+    }
+
+    override fun updateRoutineColor(routin: Routin, color: String) {
+
+    }
+
+    override fun updateRoutineRemmeberTime(routin: Routin, time: String) {
+
+    }
+
+    override fun updateRoutineRemmeberDay(routin: Routin, day: String) {
+
+    }
+
+    override fun updateRoutineTimeInWeek(routin: Routin) {
+
+    }
+
 }

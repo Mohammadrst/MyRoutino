@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.example.routino.data.db.AppDatabase
 import com.example.routino.data.repository.home.homeRepository
 import com.example.routino.data.repository.home.homeRepositoryImpl
-import com.example.routino.data.viewmodel.HomeViewModel
+import com.example.routino.ui.HomeFragment.HomeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
