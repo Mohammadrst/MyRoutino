@@ -5,28 +5,47 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.routino.data.model.ColorBottomSheet
 import com.example.routino.databinding.HomeFragmentBottomsheetRvSampleBinding
 
 
 class HomeBottomSheetRVAdapter(var onItemClicked: OnItemClicked) :
     RecyclerView.Adapter<HomeBottomSheetRVAdapter.MyViewHolder>() {
 
-    var list = ArrayList<String>()
+    var listColor = ArrayList<ColorBottomSheet>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
 
-
     inner class MyViewHolder(val binding: HomeFragmentBottomsheetRvSampleBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(color: String, position: Int) {
-            binding.bottomsheetRoundedIV.setBackgroundColor(Color.parseColor(color))
+        fun bind(color: ColorBottomSheet, position: Int) {
+            binding.bottomsheetRoundedIV.setBackgroundColor(Color.parseColor(color.colorCode))
             itemView.setOnClickListener(View.OnClickListener {
-                onItemClicked.OnClicked(color)
+                onItemClicked.OnClicked(color.colorCode)
+                checkCheckedItem()
+                checkColor(color)
                 binding.bottomsheetRoundedIV.setImageResource(com.example.routino.R.drawable.ic_baseline_check_24)
             })
+        }
+
+        private fun checkColor(color: ColorBottomSheet) {
+            listColor.find {
+                it.colorCode == color.colorCode
+            }?.apply {
+                isChecked = true
+            }
+        }
+
+        private fun checkCheckedItem() {
+            listColor.find {
+                it.isChecked
+            }?.apply {
+                isChecked = false
+            }
+            notifyDataSetChanged()
         }
     }
 
@@ -46,13 +65,16 @@ class HomeBottomSheetRVAdapter(var onItemClicked: OnItemClicked) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(list[position], position)
-
-
+        holder.bind(listColor[position], position)
+        if (listColor[position].isChecked) {
+            holder.binding.bottomsheetRoundedIV.setImageResource(com.example.routino.R.drawable.ic_baseline_check_24)
+        } else {
+            holder.binding.bottomsheetRoundedIV.setImageBitmap(null)
+        }
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return listColor.size
     }
 
     interface OnItemClicked {

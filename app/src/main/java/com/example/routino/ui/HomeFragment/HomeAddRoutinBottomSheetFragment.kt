@@ -1,17 +1,16 @@
 package com.example.routino.ui.HomeFragment
 
 import android.app.TimePickerDialog
-import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.routino.R
+import com.example.routino.data.model.ColorBottomSheet
 import com.example.routino.data.model.Routin
 import com.example.routino.databinding.FragmentHomeAddRoutinBottomSheetBinding
 import com.example.routino.ui.HomeFragment.Adpaters.HomeBottomSheetRVAdapter
@@ -50,35 +49,35 @@ class HomeAddRoutinBottomSheetFragment(var onSaveBtnClicked: OnSaveBtnClicked) :
 
     }
 
-    fun colorList(): ArrayList<String> {
-        val list = ArrayList<String>()
-        list.add("#d90000")
-        list.add("#0452cf")
-        list.add("#cf04c8")
-        list.add("#cf044e")
-        list.add("#04cf55")
-        list.add("#cf9c04")
-        list.add("#84cf04")
-        list.add("#04cfbe")
-        list.add("#040bcf")
-        list.add("#cf0404")
-        list.add("#14dbbd")
-        list.add("#9e1fed")
-        list.add("#ed1f7f")
-        list.add("#78ed1f")
-        list.add("#1f9eed")
-        list.add("#bded1f")
-        list.add("#eda81f")
-        list.add("#67ed1f")
-        list.add("#1f7fed")
-        list.add("#c4eb5b")
-        list.add("#7c65f0")
+    fun colorList(): ArrayList<ColorBottomSheet> {
+        val list = ArrayList<ColorBottomSheet>()
+        list.add(ColorBottomSheet("#d90000"))
+        list.add(ColorBottomSheet("#0452cf"))
+        list.add(ColorBottomSheet("#cf04c8"))
+        list.add(ColorBottomSheet("#cf044e"))
+        list.add(ColorBottomSheet("#04cf55"))
+        list.add(ColorBottomSheet("#cf9c04"))
+        list.add(ColorBottomSheet("#84cf04"))
+        list.add(ColorBottomSheet("#04cfbe"))
+        list.add(ColorBottomSheet("#040bcf"))
+        list.add(ColorBottomSheet("#cf0404"))
+        list.add(ColorBottomSheet("#14dbbd"))
+        list.add(ColorBottomSheet("#9e1fed"))
+        list.add(ColorBottomSheet("#ed1f7f"))
+        list.add(ColorBottomSheet("#78ed1f"))
+        list.add(ColorBottomSheet("#1f9eed"))
+        list.add(ColorBottomSheet("#bded1f"))
+        list.add(ColorBottomSheet("#eda81f"))
+        list.add(ColorBottomSheet("#67ed1f"))
+        list.add(ColorBottomSheet("#1f7fed"))
+        list.add(ColorBottomSheet("#c4eb5b"))
+        list.add(ColorBottomSheet("#7c65f0"))
         return list
     }
 
     fun colorRVsetup() {
         var adapter = HomeBottomSheetRVAdapter(this)
-        adapter.list = colorList()
+        adapter.listColor = colorList()
         binding.homeBottomSheetColorRV.adapter = adapter
         binding.homeBottomSheetColorRV.layoutManager = GridLayoutManager(requireContext(), 7)
     }

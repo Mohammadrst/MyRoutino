@@ -1,6 +1,5 @@
 package com.example.routino.ui.HomeFragment.Adpaters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -62,17 +61,17 @@ class MainRecyclerViewItemAdapter(var ondaysChanged: OndaysChanged,var ctx :Cont
 
     fun daysHandler(binding: HomeFragmentMainRrvSampleBinding, routin: Routin) {
 
-        ItemClickHander(binding.ivHomeRvFriday, R.string.friday, routin)
-        ItemClickHander(binding.ivHomeRvMonday, R.string.monday, routin)
-        ItemClickHander(binding.ivHomeRvSunday, R.string.sunday, routin)
-        ItemClickHander(binding.ivHomeRvThursday, R.string.thursday, routin)
-        ItemClickHander(binding.ivHomeRvThusday, R.string.thusday, routin)
-        ItemClickHander(binding.ivHomeRvWensday, R.string.wednesday, routin)
-        ItemClickHander(binding.ivHomeRvSatherday, R.string.saturday, routin)
+        itemClickHandler(binding.ivHomeRvFriday, R.string.friday, routin)
+        itemClickHandler(binding.ivHomeRvMonday, R.string.monday, routin)
+        itemClickHandler(binding.ivHomeRvSunday, R.string.sunday, routin)
+        itemClickHandler(binding.ivHomeRvThursday, R.string.thursday, routin)
+        itemClickHandler(binding.ivHomeRvThusday, R.string.thusday, routin)
+        itemClickHandler(binding.ivHomeRvWensday, R.string.wednesday, routin)
+        itemClickHandler(binding.ivHomeRvSatherday, R.string.saturday, routin)
     }
 
 
-    fun ItemClickHander(iv: ImageView, day: Int, routin: Routin) {
+    fun itemClickHandler(iv: ImageView, day: Int, routin: Routin) {
 
         iv.setOnClickListener {
 
